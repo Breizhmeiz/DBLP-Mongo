@@ -45,3 +45,35 @@ print("\nTrier les publications de “Toru Ishida” par titre de livre :")
 books = db.publis.find({'type': "Book", 'authors': { "$elemMatch": { "$eq": "Toru Ishida" } } }).sort('title', 1)
 for book in books:
     pprint.pprint(book)
+_ = input("Appuyez sur une touche pour continuer...")
+
+
+print("\nCompter le nombre de ses publications :")
+nb_books = db.publis.count_documents({ 'authors': { "$elemMatch": { "$eq": "Toru Ishida" } } })
+print(f"Nombre de publications : {nb_books}")
+_ = input("Appuyez sur une touche pour continuer...")
+
+
+print("\nCompter le nombre de publications depuis 2011 et par type :")
+nb_books = db.publis.count_documents({'year': { "$gte": 2011 } })
+print(f"Nombre de publications depuis 2011 : {nb_books}")
+print("\nNombre de publications par type :")
+nb_books = db.publis.aggregate([
+    { '$group': { '_id': '$type', 'count': { '$sum': 1 } } }
+])
+for book in nb_books:
+    pprint.pprint(book)
+_ = input("Appuyez sur une touche pour continuer...")
+
+
+print("\nCompter le nombre de publications par auteur et trier le résultat par ordre croissant :")
+books = db.publis.aggregate([
+    { '$unwind': '$authors' },
+    { '$group': { '_id': '$authors', 'nb_publis': { '$sum': 1 } } },
+    { '$sort': { 'nb_publis': 1 } }
+])
+for book in books:
+    pprint.pprint(book)
+
+_ = input("Appuyez sur une touche pour continuer...")
+

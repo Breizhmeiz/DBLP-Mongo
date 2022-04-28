@@ -36,9 +36,9 @@ Le script Python doit permettre de :
 - [X] Lister les publications de l’auteur “Toru Ishida” ;
 - [X] Lister tous les auteurs distincts ;
 - [X] Trier les publications de “Toru Ishida” par titre de livre ;
-- [ ] Compter le nombre de ses publications ;
-- [ ] Compter le nombre de publications depuis 2011 et par type ;
-- [ ] Compter le nombre de publications par auteur et trier le résultat par ordre croissant ;
+- [X] Compter le nombre de ses publications ;
+- [X] Compter le nombre de publications depuis 2011 et par type ;
+- [X] Compter le nombre de publications par auteur et trier le résultat par ordre croissant ;
 
 Tous les affichages se font dans la console.
 
