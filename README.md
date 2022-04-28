@@ -43,8 +43,8 @@ Le script Python doit permettre de :
 Tous les affichages se font dans la console.
 
 Et s'il vous reste du temps écrire un petit script qui :
-- [ ] demande le chemin d'un fichier json,
-- [ ] insére un ou plusieurs nouveaux documents, à partir de ce fichier, dans la collection publis.
+- [X] demande le chemin d'un fichier json,
+- [X] insére un ou plusieurs nouveaux documents, à partir de ce fichier, dans la collection publis.
 
 Pour tester ce dernier script, créer un fichier json à partir des informations trouvées sur le site proposé en lien.
 
@@ -59,4 +59,9 @@ Présentation du code au formateur.
 
 ## Livrables
 
-Un lien Github vers le code Python.
+Un lien Github vers le code Python :
+- `docker-compose up -d` / `docker-compose down` pour lancer la stack MongoDB
+- `sh ./mongoimport_docker.sh dblp.json` pour remplir la base avec les données fournies
+- `pip install -r requirements.txt` pour installer les dépendances
+- `python3 app.py` pour lancer le script Python
+- `sh ./mongoimport_docker.sh refs.json` pour ajouter les nouvelles références
