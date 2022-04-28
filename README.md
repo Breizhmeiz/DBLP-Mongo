@@ -27,7 +27,8 @@ Le projet se fait seul et doit être rendu vendredi soir.
 Vous allez suivre les étapes suivantes pour réaliser le projet :
 - [X] Créer la base DBLP et y ajouter une collection publis,
 - [X] importer dans la base les données du fichier dblp.json (Ca peut prendre un peu de temps),
-- [~] écrire le script Python pour tester la base, exécuter le script et vérifier les résultats.
+- [X] écrire le script Python pour tester la base, exécuter le script et vérifier les résultats.
+
 
 Le script Python doit permettre de :
 - [X] Compter le nombre de documents de la collection publis;
@@ -40,11 +41,13 @@ Le script Python doit permettre de :
 - [X] Compter le nombre de publications depuis 2011 et par type ;
 - [X] Compter le nombre de publications par auteur et trier le résultat par ordre croissant ;
 
+
 Tous les affichages se font dans la console.
 
 Et s'il vous reste du temps écrire un petit script qui :
 - [X] demande le chemin d'un fichier json,
 - [X] insére un ou plusieurs nouveaux documents, à partir de ce fichier, dans la collection publis.
+
 
 Pour tester ce dernier script, créer un fichier json à partir des informations trouvées sur le site proposé en lien.
 
