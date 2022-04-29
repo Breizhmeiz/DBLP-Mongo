@@ -1,5 +1,11 @@
-from pymongo import MongoClient
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+"""
+    Manipulation de données avec MongoDB
+"""
+
 import pprint
+from pymongo.mongo_client import MongoClient
 
 
 client = MongoClient('mongodb://root:root@localhost:27017')
@@ -28,7 +34,7 @@ _ = input("Appuyez sur une touche pour continuer...")
 
 
 print("\nLister les publications de l’auteur “Toru Ishida” :")
-books = db.publis.find({ 'authors': { "$elemMatch": { "$eq": "Toru Ishida" } } })
+books = db.publis.find({ 'authors': {"$elemMatch": {"$eq": "Toru Ishida"}} })
 for book in books:
     pprint.pprint(book)
 _ = input("Appuyez sur une touche pour continuer...")
@@ -42,14 +48,19 @@ _ = input("Appuyez sur une touche pour continuer...")
 
 
 print("\nTrier les publications de “Toru Ishida” par titre de livre :")
-books = db.publis.find({'type': "Book", 'authors': { "$elemMatch": { "$eq": "Toru Ishida" } } }).sort('title', 1)
+books = db.publis.find({
+    'type': "Book",
+    'authors': { "$elemMatch": { "$eq": "Toru Ishida" } }
+    }).sort('title', 1)
 for book in books:
     pprint.pprint(book)
 _ = input("Appuyez sur une touche pour continuer...")
 
 
 print("\nCompter le nombre de ses publications :")
-nb_books = db.publis.count_documents({ 'authors': { "$elemMatch": { "$eq": "Toru Ishida" } } })
+nb_books = db.publis.count_documents({
+    'authors': { "$elemMatch": { "$eq": "Toru Ishida" } }
+    })
 print(f"Nombre de publications : {nb_books}")
 _ = input("Appuyez sur une touche pour continuer...")
 
@@ -76,4 +87,3 @@ for book in books:
     pprint.pprint(book)
 
 _ = input("Appuyez sur une touche pour continuer...")
-
